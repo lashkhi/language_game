@@ -16,15 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if let dataFromJson = DataProvider.loadJSON(name: "json") {
-            //COnvert JSON
-        } else {
-            print("No data found")
-        }
-        
         do {
-            let dataFromJSON2 = try DataProvider.loadJSON2(name: "json")
-            print (dataFromJSON2)
+            let dataFromJSON = try DataProvider.loadJSON(name: "json")
+            print (dataFromJSON)
         } catch DataProviderError.noFileFound {
             print ("No file")
         } catch DataProviderError.dataCreatingFail {
