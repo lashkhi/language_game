@@ -15,8 +15,8 @@ enum DataProviderError: Error {
 
 class DataProvider {
 
-    static func loadJSON(name: String) throws -> Data {
-        guard let filePath = Bundle.main.path(forResource: name, ofType: "json")
+    static func loadData(name: String, type: String) throws -> Data {
+        guard let filePath = Bundle.main.path(forResource: name, ofType: type)
             else { throw DataProviderError.noFileFound }
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath), options: .mappedIfSafe)
             else { throw DataProviderError.dataCreatingFail }

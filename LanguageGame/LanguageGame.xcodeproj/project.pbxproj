@@ -14,6 +14,9 @@
 		63688A141FBA3919005237A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63688A121FBA3919005237A6 /* LaunchScreen.storyboard */; };
 		63688A1F1FBA391A005237A6 /* LanguageGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63688A1E1FBA391A005237A6 /* LanguageGameTests.swift */; };
 		63688A2A1FBA4006005237A6 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63688A291FBA4006005237A6 /* DataProvider.swift */; };
+		661E01961FBB51C200F7D3E1 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 661E01951FBB51C200F7D3E1 /* words.json */; };
+		661E01981FBB52D900F7D3E1 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E01971FBB52D900F7D3E1 /* Word.swift */; };
+		661E019A1FBB55CB00F7D3E1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E01991FBB55CB00F7D3E1 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		63688A1E1FBA391A005237A6 /* LanguageGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameTests.swift; sourceTree = "<group>"; };
 		63688A201FBA391A005237A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63688A291FBA4006005237A6 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = LanguageGame/DataProvider.swift; sourceTree = SOURCE_ROOT; };
+		661E01951FBB51C200F7D3E1 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		661E01971FBB52D900F7D3E1 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		661E01991FBB55CB00F7D3E1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		63688A081FBA3919005237A6 /* LanguageGame */ = {
 			isa = PBXGroup;
 			children = (
+				661E01951FBB51C200F7D3E1 /* words.json */,
 				63688A2B1FBA4010005237A6 /* Services */,
 				63688A091FBA3919005237A6 /* AppDelegate.swift */,
 				63688A0B1FBA3919005237A6 /* ViewController.swift */,
@@ -86,6 +93,8 @@
 				63688A101FBA3919005237A6 /* Assets.xcassets */,
 				63688A121FBA3919005237A6 /* LaunchScreen.storyboard */,
 				63688A151FBA3919005237A6 /* Info.plist */,
+				661E01971FBB52D900F7D3E1 /* Word.swift */,
+				661E01991FBB55CB00F7D3E1 /* Game.swift */,
 			);
 			path = LanguageGame;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63688A141FBA3919005237A6 /* LaunchScreen.storyboard in Resources */,
+				661E01961FBB51C200F7D3E1 /* words.json in Resources */,
 				63688A111FBA3919005237A6 /* Assets.xcassets in Resources */,
 				63688A0F1FBA3919005237A6 /* Main.storyboard in Resources */,
 			);
@@ -211,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				63688A2A1FBA4006005237A6 /* DataProvider.swift in Sources */,
+				661E019A1FBB55CB00F7D3E1 /* Game.swift in Sources */,
+				661E01981FBB52D900F7D3E1 /* Word.swift in Sources */,
 				63688A0C1FBA3919005237A6 /* ViewController.swift in Sources */,
 				63688A0A1FBA3919005237A6 /* AppDelegate.swift in Sources */,
 			);
