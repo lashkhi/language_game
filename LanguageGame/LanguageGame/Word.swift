@@ -11,9 +11,11 @@ import Foundation
 struct Word: Codable {
     let english: String
     let spanish: String
+    var isWrongCombination: Bool?
     
     enum CodingKeys: String, CodingKey {
         case english = "text_eng"
         case spanish = "text_spa"
+        case isWrongCombination
     }
 }
