@@ -40,6 +40,9 @@
                                 <state key="normal" title="wrong">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="wrongTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zXQ-oO-R15"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sh8-hx-r9f">
                                 <rect key="frame" x="187.5" y="612" width="187.5" height="55"/>
@@ -50,15 +53,12 @@
                                 <state key="normal" title="correct">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="correctTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xce-C9-LXX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="wrong answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifN-ex-UrV">
                                 <rect key="frame" x="133.5" y="578" width="107" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8W-6L-82w">
-                                <rect key="frame" x="167.5" y="549" width="39.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,8 +72,6 @@
                             <constraint firstItem="ifN-ex-UrV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OIj-bq-sjg"/>
                             <constraint firstItem="sh8-hx-r9f" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="OS7-Za-Ts7"/>
                             <constraint firstAttribute="bottom" secondItem="fi1-gI-I7D" secondAttribute="bottom" id="UEm-nl-EhA"/>
-                            <constraint firstItem="u8W-6L-82w" firstAttribute="centerX" secondItem="ifN-ex-UrV" secondAttribute="centerX" id="glL-J8-DP3"/>
-                            <constraint firstItem="ifN-ex-UrV" firstAttribute="top" secondItem="u8W-6L-82w" secondAttribute="bottom" constant="8" id="j1k-eU-ru6"/>
                             <constraint firstItem="sh8-hx-r9f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jps-uH-gka"/>
                             <constraint firstItem="fi1-gI-I7D" firstAttribute="width" secondItem="sh8-hx-r9f" secondAttribute="width" id="pt5-tF-2Tf"/>
                             <constraint firstItem="sh8-hx-r9f" firstAttribute="leading" secondItem="fi1-gI-I7D" secondAttribute="trailing" id="teN-Rk-LpV"/>
@@ -81,6 +79,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="english" destination="dZt-vt-2nc" id="y5F-01-Sgr"/>
+                        <outlet property="translation" destination="kYR-2t-QWR" id="Pow-qN-OnK"/>
+                        <outlet property="wrongAnswerCounter" destination="ifN-ex-UrV" id="MZV-Sm-TVU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
