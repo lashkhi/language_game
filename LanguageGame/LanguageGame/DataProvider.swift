@@ -13,7 +13,7 @@ enum DataProviderError: Error {
     case dataCreatingFail
 }
 
-class DataProvider {
+final class DataProvider {
 
     static func loadData(name: String, type: String) throws -> Data {
         guard let filePath = Bundle.main.path(forResource: name, ofType: type)
