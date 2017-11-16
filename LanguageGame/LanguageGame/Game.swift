@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum GameAnswer {
+    case incorrect
+    case correct
+}
+
 final class Game {
     private var originalWords: [Word]?
     var words = [Word]()
@@ -22,6 +27,15 @@ final class Game {
         }
         words.remove(at: 0)
         return words.first
+    }
+    
+    func checkCorrectness(for word: Word, answer:GameAnswer) {
+        switch answer {
+        case .correct:
+            if word.isWrongCombination { print("fail") }
+        case .incorrect:
+            if word.isWrongCombination { print("correct") }
+        }
     }
 }
 

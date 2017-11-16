@@ -30,11 +30,6 @@ class ViewController: UIViewController {
         words = game.words
     }
     
-    func checkCorrectness(correctButtonTapped: Bool) {
-        if let word = words?.first {
-            word.isWrongCombination
-        }
-    }
     func updateLabelsWith(word: Word) {
         english.text = word.english
         translation.text = word.spanish
@@ -42,20 +37,23 @@ class ViewController: UIViewController {
     
     func showNextWord() {
         if let word = game?.loadNextWords() {
+            words = game?.words
             updateLabelsWith(word: word)
         } else { print("Game finished") }
     }
     
 
     @IBAction func wrongTap(_ sender: UIButton) {
-        buttonTapped(wrongButtonTapped: true)
+        buttonTapped(with: .incorrect)
     }
     
     @IBAction func correctTap(_ sender: UIButton) {
-        buttonTapped(wrongButtonTapped: false)
+        buttonTapped(with: .correct)
     }
     
-    func buttonTapped(wrongButtonTapped: Bool) {
+    func buttonTapped(with answer: GameAnswer) {
+        guard let game = game, let word = words?.first else { return }
+        game.checkCorrectness(for: word, answer: answer)
         showNextWord()
     }
     override func didReceiveMemoryWarning() {
