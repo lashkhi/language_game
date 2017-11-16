@@ -16,26 +16,6 @@ final class Game {
         self.originalWords = words
     }
     
-    func createWordsCombination() {
-        for (index, word) in originalWords!.enumerated() {
-            var newWord = word
-            if index % 4 == 0 {
-                let randomWord = chooseRandomWordAndCompare(word: word)
-                newWord = Word(english: word.english, spanish: randomWord.spanish, isWrongCombination: true)
-            }
-            words.append(newWord)
-        }
-    }
-    
-    func chooseRandomWordAndCompare(word: Word) -> Word {
-        let randomNumber = Int(arc4random_uniform(UInt32(originalWords!.count)))
-        var randomWord = originalWords![randomNumber]
-        if randomWord.spanish == word.spanish {
-            randomWord = chooseRandomWordAndCompare(word: word)
-        }
-        return randomWord
-    }
-    
     func loadNextWords() -> Word? {
         if words.isEmpty  {
             return nil
@@ -43,5 +23,19 @@ final class Game {
         words.remove(at: 0)
         return words.first
     }
+}
+
+extension Game {
+    func createWordsCombination() {
+        words = originalWords!.enumerated().map { word in
+            word.offset % 4 == 0 ? random(word: word.element) : word.element
+        }
+    }
     
+    func random(word: Word) -> Word {
+        let filtered = originalWords!.filter { $0.spanish != word.spanish }
+        let randomNumber = Int(arc4random_uniform(UInt32(filtered.count)))
+        let randomWord = filtered[randomNumber]
+        return Word(english: word.english, spanish: randomWord.spanish, isWrongCombination: true)
+    }
 }
