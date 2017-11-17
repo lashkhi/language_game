@@ -42,6 +42,22 @@ class ViewController: UIViewController {
         } else { print("Game finished") }
     }
     
+    func checkCorrectness(for word: Word, answer: GameAnswer) {
+        guard let game = game else { return }
+        if game.isAnswerCorrect(for: word, answer: answer) {
+            print("Correct answer")
+        } else {
+            print("Wrong answer")
+            countWrongAnswer()
+        }
+    }
+    
+    func countWrongAnswer() {
+        guard var counter = Int(wrongAnswerCounter.text!) else { return }
+        counter = counter + 1
+        wrongAnswerCounter.text = "\(counter)"
+    }
+    
 
     @IBAction func wrongTap(_ sender: UIButton) {
         buttonTapped(with: .incorrect)
@@ -52,8 +68,8 @@ class ViewController: UIViewController {
     }
     
     func buttonTapped(with answer: GameAnswer) {
-        guard let game = game, let word = words?.first else { return }
-        game.checkCorrectness(for: word, answer: answer)
+        guard let word = words?.first else { return }
+        checkCorrectness(for: word, answer: answer)
         showNextWord()
     }
     override func didReceiveMemoryWarning() {

@@ -29,13 +29,14 @@ final class Game {
         return words.first
     }
     
-    func checkCorrectness(for word: Word, answer:GameAnswer) {
+    func isAnswerCorrect(for word: Word, answer:GameAnswer) -> Bool {
         switch answer {
         case .correct:
-            if word.isWrongCombination { print("fail") }
+            if word.isWrongCombination { return false }
         case .incorrect:
-            if word.isWrongCombination { print("correct") }
+            if !word.isWrongCombination { return false }
         }
+        return true
     }
 }
 
