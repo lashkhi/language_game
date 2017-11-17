@@ -20,6 +20,22 @@ class GameTest: XCTestCase {
         super.tearDown()
     }
     
+    func testGameWithNoWords_ReturningNextWord_ShouldReturnNil() {
+        let game = Game(words: [Word]())
+        XCTAssertNil(game.loadNextWords(), "Should return nil")
+    }
+    
+    func testGameWithOneWord_ReturningNextWord_ShouldReturnNil() {
+        let game = Game(words: [Word.create()])
+        XCTAssertNil(game.loadNextWords(), "Should return nil")
+    }
+    
+    func testGameWithTwoWords_ReturningNextWord_ShouldReturnLastWord() {
+        let lastWord = Word.create(english: "eng", spanish: "span", isWrongCombination: true)
+        let game = Game(words: [Word.create(), lastWord])
+        XCTAssertEqual(game.loadNextWords(), lastWord, "Should be equal")
+    }
+    
     func testCorrectTranslation_MarkedAsCorrectTranslation_ShouldReturnCorrect() {
         let word = Word.create()
         let game = Game(words: [word])

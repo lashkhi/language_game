@@ -9,11 +9,15 @@
 import Foundation
 @testable import LanguageGame
 
-extension Word {
+extension Word: Equatable {
     static func create(
         english: String = "holidays",
         spanish: String = "vacaciones",
         isWrongCombination: Bool = false) -> Word {
         return Word(english: english, spanish: spanish, isWrongCombination: isWrongCombination)
+    }
+    
+    public static func == (lhs: Word, rhs: Word) -> Bool {
+        return (lhs.english == rhs.english) && (lhs.spanish == rhs.spanish) && (lhs.isWrongCombination == rhs.isWrongCombination)
     }
 }

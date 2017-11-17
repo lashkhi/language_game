@@ -20,6 +20,7 @@ final class Game {
     
     init(words: [Word]) {
         self.originalWords = words
+        self.words = words
     }
     
     func loadNextWords() -> Word? {
