@@ -16,6 +16,7 @@ enum GameAnswer {
 final class Game {
     private var originalWords: [Word]?
     var words = [Word]()
+    var wrongAnswerCount: Int = 0
     
     init(words: [Word]) {
         self.originalWords = words
@@ -37,6 +38,19 @@ final class Game {
             if !word.isWrongCombination { return false }
         }
         return true
+    }
+    
+    func countWrongAnswer() -> String {
+        wrongAnswerCount += 1
+        if gameFinished() {
+            return "You failed. End."
+        }
+        return "\(wrongAnswerCount)"
+    }
+    
+    func gameFinished() -> Bool {
+        if wrongAnswerCount == 3 { return true }
+        return false
     }
 }
 

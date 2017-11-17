@@ -80,9 +80,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="correctButton" destination="sh8-hx-r9f" id="DPX-Qq-mKk"/>
                         <outlet property="english" destination="dZt-vt-2nc" id="y5F-01-Sgr"/>
                         <outlet property="translation" destination="kYR-2t-QWR" id="Pow-qN-OnK"/>
                         <outlet property="wrongAnswerCounter" destination="ifN-ex-UrV" id="MZV-Sm-TVU"/>
+                        <outlet property="wrongButton" destination="fi1-gI-I7D" id="1cb-HR-IdQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

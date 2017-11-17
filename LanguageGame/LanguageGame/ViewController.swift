@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var english: UILabel!
     @IBOutlet weak var translation: UILabel!
     @IBOutlet weak var wrongAnswerCounter: UILabel!
+    @IBOutlet weak var correctButton: UIButton!
+    @IBOutlet weak var wrongButton: UIButton!
     
     var game: Game?
     var words: [Word]?
@@ -30,32 +32,38 @@ class ViewController: UIViewController {
         words = game.words
     }
     
-    func updateLabelsWith(word: Word) {
+    func finish(_ game: Game) {
+        correctButton.isEnabled = false
+        wrongButton.isEnabled = false
+    }
+    
+    private func updateLabelsWith(word: Word) {
         english.text = word.english
         translation.text = word.spanish
     }
     
-    func showNextWord() {
+    private func showNextWord() {
         if let word = game?.loadNextWords() {
             words = game?.words
             updateLabelsWith(word: word)
         } else { print("Game finished") }
     }
     
-    func checkCorrectness(for word: Word, answer: GameAnswer) {
+    private func checkCorrectness(for word: Word, answer: GameAnswer) {
         guard let game = game else { return }
         if game.isAnswerCorrect(for: word, answer: answer) {
             print("Correct answer")
         } else {
             print("Wrong answer")
-            countWrongAnswer()
+            countWrongAnswer(for: game)
         }
     }
     
-    func countWrongAnswer() {
-        guard var counter = Int(wrongAnswerCounter.text!) else { return }
-        counter = counter + 1
-        wrongAnswerCounter.text = "\(counter)"
+    private func countWrongAnswer(for game: Game) {
+        wrongAnswerCounter.text = game.countWrongAnswer()
+        if game.gameFinished() {
+            finish(game)
+        }
     }
     
 
@@ -67,7 +75,7 @@ class ViewController: UIViewController {
         buttonTapped(with: .correct)
     }
     
-    func buttonTapped(with answer: GameAnswer) {
+    private func buttonTapped(with answer: GameAnswer) {
         guard let word = words?.first else { return }
         checkCorrectness(for: word, answer: answer)
         showNextWord()
