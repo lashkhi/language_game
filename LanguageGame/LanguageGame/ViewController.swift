@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         if let defaultGame = GameLoader.createDefault() {
             start(game: defaultGame)
             updateLabelsWith(word: words!.first!)
+            buttonsInteraction(enable: true)
+        } else {
+            buttonsInteraction(enable: false)
         }
     }
     
@@ -32,9 +35,10 @@ class ViewController: UIViewController {
         words = game.words
     }
     
-    func finish(_ game: Game) {
-        correctButton.isEnabled = false
-        wrongButton.isEnabled = false
+    
+    func buttonsInteraction(enable: Bool) {
+        correctButton.isEnabled = enable
+        wrongButton.isEnabled = enable
     }
     
     private func updateLabelsWith(word: Word) {
@@ -62,7 +66,7 @@ class ViewController: UIViewController {
     private func countWrongAnswer(for game: Game) {
         wrongAnswerCounter.text = game.countWrongAnswer()
         if game.gameFinished() {
-            finish(game)
+            buttonsInteraction(enable: false)
         }
     }
     
