@@ -87,17 +87,16 @@
 		63688A081FBA3919005237A6 /* LanguageGame */ = {
 			isa = PBXGroup;
 			children = (
+				664A18AF1FBF39B1008BE746 /* VC + Views */,
+				664A18AE1FBF399E008BE746 /* Source */,
+				664A18AD1FBF38D8008BE746 /* Models */,
 				6674611F1FBC6FC400456CA7 /* Factory */,
-				661E01951FBB51C200F7D3E1 /* words.json */,
+				664A18B01FBF39DD008BE746 /* Game */,
 				63688A2B1FBA4010005237A6 /* Services */,
 				63688A091FBA3919005237A6 /* AppDelegate.swift */,
-				63688A0B1FBA3919005237A6 /* ViewController.swift */,
-				63688A0D1FBA3919005237A6 /* Main.storyboard */,
 				63688A101FBA3919005237A6 /* Assets.xcassets */,
 				63688A121FBA3919005237A6 /* LaunchScreen.storyboard */,
 				63688A151FBA3919005237A6 /* Info.plist */,
-				661E01971FBB52D900F7D3E1 /* Word.swift */,
-				661E01991FBB55CB00F7D3E1 /* Game.swift */,
 			);
 			path = LanguageGame;
 			sourceTree = "<group>";
@@ -117,6 +116,39 @@
 				63688A291FBA4006005237A6 /* DataProvider.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		664A18AD1FBF38D8008BE746 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				661E01971FBB52D900F7D3E1 /* Word.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		664A18AE1FBF399E008BE746 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				661E01951FBB51C200F7D3E1 /* words.json */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		664A18AF1FBF39B1008BE746 /* VC + Views */ = {
+			isa = PBXGroup;
+			children = (
+				63688A0B1FBA3919005237A6 /* ViewController.swift */,
+				63688A0D1FBA3919005237A6 /* Main.storyboard */,
+			);
+			name = "VC + Views";
+			sourceTree = "<group>";
+		};
+		664A18B01FBF39DD008BE746 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				661E01991FBB55CB00F7D3E1 /* Game.swift */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 		6674611F1FBC6FC400456CA7 /* Factory */ = {

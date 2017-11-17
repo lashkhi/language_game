@@ -24,13 +24,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="translation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYR-2t-QWR">
-                                <rect key="frame" x="239" y="13" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi1-gI-I7D">
                                 <rect key="frame" x="0.0" y="612" width="187.5" height="55"/>
                                 <color key="backgroundColor" red="1" green="0.050681009165205793" blue="0.08674906610671107" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,6 +56,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="translation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYR-2t-QWR">
+                                <rect key="frame" x="146.5" y="61" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -72,10 +71,12 @@
                             <constraint firstItem="ifN-ex-UrV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OIj-bq-sjg"/>
                             <constraint firstItem="sh8-hx-r9f" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="OS7-Za-Ts7"/>
                             <constraint firstAttribute="bottom" secondItem="fi1-gI-I7D" secondAttribute="bottom" id="UEm-nl-EhA"/>
+                            <constraint firstItem="kYR-2t-QWR" firstAttribute="top" secondItem="dZt-vt-2nc" secondAttribute="bottom" constant="8" id="dXW-1O-a07"/>
                             <constraint firstItem="sh8-hx-r9f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jps-uH-gka"/>
                             <constraint firstItem="fi1-gI-I7D" firstAttribute="width" secondItem="sh8-hx-r9f" secondAttribute="width" id="pt5-tF-2Tf"/>
                             <constraint firstItem="sh8-hx-r9f" firstAttribute="leading" secondItem="fi1-gI-I7D" secondAttribute="trailing" id="teN-Rk-LpV"/>
                             <constraint firstItem="fi1-gI-I7D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vjq-ny-RH0"/>
+                            <constraint firstItem="kYR-2t-QWR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yKT-A3-co8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
